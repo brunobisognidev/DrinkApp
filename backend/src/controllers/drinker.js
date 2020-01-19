@@ -1,4 +1,4 @@
-const axios = require ('axions')
+const axios = require ('axios')
 const Drinkers = require ('../models/drinkers')
 const { findConnections , sendMessage } = require ('../websocket')
 
@@ -28,12 +28,12 @@ module.exports = {
             prefdrinks: prefdrinksArray,
             location : {
                type: 'Point',
-                  coordinates : [logitude, latitude]
+                  coordinates : [longitude, latitude]
             }
          })   
 
          const sendSocketMessageTo = findConnections(
-            { latitude, logitude },
+            { latitude, longitude },
             prefdrinksArray
          )
 

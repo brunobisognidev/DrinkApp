@@ -9,13 +9,13 @@ exports.setupWebsocket = (server) => {
       io = socketio(server)
 
       io.on('connection' , socket => {
-         const { latitude , logitudes ,  prefdrinks} = socket.handshake.query
+         const { latitude , longitudes ,  prefdrinks} = socket.handshake.query
 
          connections.push({
             id: socket.id, 
             coordinates: {
-               latidude : Number(latitude),
-               logitude : Number(logitude)
+               latitude : Number(latitude),
+               longitude : Number(longitude)
             },
 
             prefdrinks : prefdrinks.split(',').map(prefdrinks => prefdrinks.trim())
@@ -46,8 +46,8 @@ exports.setupWebsocket = (server) => {
          
          const radius = 6371
 
-         const {latidude: lat1, logitude: lon1} = centerCoordinates;
-         const {latidude: lat2, logitude: lon2} = pointCoordinates; 
+         const {latitude: lat1, longitude: lon1} = centerCoordinates;
+         const {latitude: lat2, longitude: lon2} = pointCoordinates; 
          
          const dLat = deg2rad(lat2-lat1);
          const dLon = deg2rad(lon2-lon1); 

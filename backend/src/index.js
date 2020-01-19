@@ -1,7 +1,7 @@
 const express = require ('express')
 const mongoose = require ('mongoose')
 const cors = require ('cors')
-const htpp = require ('http')
+const http = require ('http')
 
 mongoose.connect('mongodb+srv://admin:Amor131313@borabeber-lkzbc.mongodb.net/borabeber?retryWrites=true&w=majority', {
    useNewUrlParser : true,

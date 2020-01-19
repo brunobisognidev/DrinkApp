@@ -2,7 +2,7 @@ const {  Router } = require('express')
 const DrinkerController = require('./controllers/drinker')
 const SearchController = require ('./controllers/search')
 
-const Router ()
+const router = Router()
 
 routes.get('/bebedor', DrinkerController.index)
 routes.post('/bebedor', DrinkerController.store)
